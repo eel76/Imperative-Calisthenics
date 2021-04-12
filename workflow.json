@@ -1,0 +1,14 @@
+{
+  "rule": {
+    "check": "everything",
+    "response": "warning"
+  },
+  "tough rule": {
+    "check": "everything",
+    "response": "none"
+  },
+  "default": {
+    "check": "everything",
+    "response": "warning"
+  }
+}

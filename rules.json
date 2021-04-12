@@ -1,0 +1,85 @@
+{
+  "IC1": {
+    "type": "rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "^     ",
+    "summary": "Only one indendation",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC2": {
+    "type": "rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "else",
+    "summary": "No else",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC3": {
+    "type": "rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": ".*[.].*[.].*",
+    "ignored_text": "\".*[.].*[.].*\"",
+    "summary": "One dot per line",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC4": {
+    "type": "rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "[a-z]+[A-Z][a-z]+[A-Z]|[a-z]+[_][a-z]+[_][a-z]+",
+    "summary": "no abbreviations and only one or two words",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC5a": {
+    "type": "rule",
+    "matched_files": "[.](cpp)$",
+    "matched_text": "([^\\n]*\\n){50,}\\n*.",
+    "summary": "length of source files",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC5b": {
+    "type": "rule",
+    "matched_files": "[.](h)$",
+    "matched_text": "([^\\n]*\\n){10,}\\n*.",
+    "summary": "length of header files",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC5c": {
+    "type": "rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "\\([^()]*\\)[ \\n]*(->[ \\n]*[a-zA-Z<>]+)?[ \\n]*\\{([^{}]|\\n)*(\\{([^{}]|\\n)*(\\{([^{}]|\\n)*(\\{([^{}]|\\n)*(\\{([^{}]|\\n)*\\})?\\})?\\})?\\})?\\}",
+    "ignored_text": "^([^\\n]*\\n?){0,10}$",
+    "summary": "length of functions",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC11": {
+    "type": "tough rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "if",
+    "summary": "Don't use if",
+    "rationale": "anti if campaign",
+    "workaround": ""
+  },
+  "IC12": {
+    "type": "rule",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "operator",
+    "summary": "Don't use operator overloading",
+    "rationale": "",
+    "workaround": ""
+  },
+  "IC13": {
+    "type": "hint",
+    "matched_files": "[.](cpp|h)$",
+    "matched_text": "class",
+    "summary": "Don't use class",
+    "rationale": "",
+    "workaround": "use struct instead"
+  }
+
+}
