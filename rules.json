@@ -1,7 +1,7 @@
 {
   "IC1": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": "(for|if|while).*(for|if|while)",
     "summary": "One indendation level per function",
     "rationale": "",
@@ -9,7 +9,7 @@
   },
   "IC2": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": "else",
     "summary": "No else",
     "rationale": "",
@@ -17,7 +17,7 @@
   },
   "IC3": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*[.][^\n.]+[.].*",
     "ignored_text": "\".*[.][^\n.]+[.].*\"",
     "summary": "One dot per line",
@@ -26,7 +26,7 @@
   },
   "IC4": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": "[a-z]+[A-Z][a-z]+[A-Z]|[a-z]+[_][a-z]+[_][a-z]+",
     "summary": "Short and clear names",
     "rationale": "",
@@ -34,32 +34,32 @@
   },
   "IC5": {
     "type": "rule",
-    "matched_files": "[.](cpp)$",
+    "matched_files": "[.](cpp|cxx|cc)$",
     "matched_text": "([^\n]*\n){50,}\n*.",
-    "summary": "Small entities (50/10/10-rule)",
+    "summary": "Sources with 50 lines at most",
     "rationale": "",
     "workaround": ""
   },
   "IC6": {
     "type": "rule",
-    "matched_files": "[.](h)$",
+    "matched_files": "[.](h|hpp)$",
     "matched_text": "([^\n]*\n){10,}\n*.",
-    "summary": "Small entities (50/10/10-rule)",
+    "summary": "Headers with 10 lines at most",
     "rationale": "",
     "workaround": ""
   },
   "IC7": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*[(][^()]*[)][ \n]*(->[ \n]*[_a-zA-Z<>:, ]+)?[ \n]*[{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}].*",
     "ignored_text": "^([^\n]*\n?){0,10}$",
-    "summary": "Small entities (50/10/10-rule)",
+    "summary": "Functions with 10 lines at most",
     "rationale": "",
     "workaround": ""
   },
   "IC8": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*[-][>].*|[.][*]",
     "ignored_text": "->[ \n]*[a-zA-Z<>:, ]+[ \n]*[;{]",
     "summary": "No pointers",
@@ -68,7 +68,7 @@
   },
   "IC9": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*[(][^()<>,]+([<]([^<>]*([<][^>]*[>])?)*[>][^()<>,]+)?[,][^()<>,]+([<]([^<>]*([<][^>]*[>])?)*[>][^()<>,]+)?[,][^()]*[)][ \n]*(->[ \n]*[_a-zA-Z<>:, ]+)?[ \n]*[{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}].*",
     "summary": "2 parameters per function",
     "rationale": "",
@@ -76,7 +76,7 @@
   },
   "IC10": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*[(][^()&*]*[&*][^()]*[)][ \n]*(->[ \n]*[_a-zA-Z<>:, ]+)?[ \n]*([;]|[{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*([{]([^{}]|\n)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]([^{}]|\n)*)*[}]).*",
     "ignored_text": "[ \n]+const[ \n]*[&]",
     "summary": "No output parameters",
@@ -85,7 +85,7 @@
   },
   "IC11": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*for[ \n]*[(][^;\n]*;[^;\n]*;[^;\n]*[)].*",
     "summary": "No index based loops",
     "rationale": "",
@@ -93,7 +93,7 @@
   },
   "IC12": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*(struct|class)[ \n]*[_a-zA-Z]+[ \n]*[{]([^{};]+;){3,}[^{};]*[}].*",
     "ignored_text": "enum[ \n]+(struct|class)",
     "summary": "2 elements per struct",
@@ -101,27 +101,27 @@
     "workaround": ""
   },
   "IC13": {
-    "type": "tough rule",
-    "matched_files": "[.](cpp|h)$",
-    "matched_text": "if",
-    "summary": "Don't use if",
-    "rationale": "anti if campaign",
-    "workaround": ""
-  },
-  "IC14": {
     "type": "rule",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": "operator",
     "summary": "Don't use operator overloading",
     "rationale": "",
     "workaround": ""
   },
+  "IC14": {
+    "type": "tough rule",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
+    "matched_text": "if",
+    "summary": "Don't use if",
+    "rationale": "anti if campaign",
+    "workaround": ""
+  },
   "IC15": {
     "type": "hint",
-    "matched_files": "[.](cpp|h)$",
+    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": "class",
     "summary": "Don't use class",
-    "rationale": "",
-    "workaround": "use struct instead"
+    "rationale": "Use an imperative style without object orientation. You have to access members directly without a getter anyway and a struct is a more compact.",
+    "workaround": "Use struct instead."
   }
 }
