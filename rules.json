@@ -10,7 +10,8 @@
   "IC2": {
     "type": "rule",
     "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
-    "matched_text": "else",
+    "matched_text": ".*else[ \n{].*",
+    "marked_text": "else",
     "summary": "No else",
     "rationale": "",
     "workaround": ""
@@ -60,8 +61,8 @@
   "IC8": {
     "type": "rule",
     "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
-    "matched_text": ".*[-][>].*|[.][*]",
-    "ignored_text": "->[ \n]*[a-zA-Z<>:, ]+[ \n]*[;{]",
+    "matched_text": ".*([pP]tr|[pP]ointer|[&*]|[-][>]|[.][*]).*",
+    "ignored_text": "[)][ \n]*->[ \n]*[a-zA-Z<>:, ]+[ \n]*[;{]|[_a-zA-Z0-9)][ \n]*[&*]|[[]([^]]*[&])*[]]|\"([^\"]*[*&])*\"",
     "summary": "No pointers",
     "rationale": "",
     "workaround": ""
@@ -109,14 +110,6 @@
     "workaround": ""
   },
   "IC14": {
-    "type": "tough rule",
-    "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
-    "matched_text": "if",
-    "summary": "Don't use if",
-    "rationale": "anti if campaign",
-    "workaround": ""
-  },
-  "IC15": {
     "type": "hint",
     "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": "class",
