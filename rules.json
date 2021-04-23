@@ -19,7 +19,7 @@
   "IC3": {
     "type": "rule",
     "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
-    "matched_text": ".*[.][^\n.]+[.].*",
+    "matched_text": ".*[.][ \n]*[_a-zA-Z][^\n.]+[.][ \n]*[_a-zA-Z].*",
     "ignored_text": "\".*[.][^\n.]+[.].*\"",
     "summary": "One dot per line",
     "rationale": "",
@@ -28,7 +28,8 @@
   "IC4": {
     "type": "rule",
     "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
-    "matched_text": "[a-z]+[A-Z][a-z]+[A-Z]|[a-z]+[_][a-z]+[_][a-z]+",
+    "matched_text": ".*([a-z]+[A-Z][a-z]+[A-Z]|[a-z]+[_][a-z]+[_][a-z]+).*",
+    "ignored_text": "std[ \n]*[:][:][ \n]*[a-z]+[_][a-z]+[_][a-z]+|//.*([a-z]+[A-Z][a-z]+[A-Z]|[a-z]+[_][a-z]+[_][a-z]+).*",
     "summary": "Short and clear names",
     "rationale": "",
     "workaround": ""
@@ -62,7 +63,7 @@
     "type": "rule",
     "matched_files": "[.](cpp|cxx|cc|h|hpp)$",
     "matched_text": ".*([pP]tr|[pP]ointer|[&*]|[-][>]|[.][*]).*",
-    "ignored_text": "[)][ \n]*->[ \n]*[a-zA-Z<>:, ]+[ \n]*[;{]|[_a-zA-Z0-9)][ \n]*[&*]|[[]([^]]*[&])*[]]|\"([^\"]*[*&])*\"",
+    "ignored_text": "[)][ \n]*->[ \n]*[_a-zA-Z<>:, ]+[ \n]*[;{]|[_a-zA-Z0-9)][ \n]*[&*]|[[]([^]]*[&])*[]]|\"([^\"]*[*&])*\"|['][*&][']",
     "summary": "No pointers",
     "rationale": "",
     "workaround": ""
